@@ -1,11 +1,10 @@
 angular.module('iHamilton.controllers', [])
 
-    .controller('DashCtrl', function($scope) {})
+    .controller('numbersCtrl', function($scope) {})
 
-    .controller('ChatsCtrl', function($scope) {})
+    .controller('mapCtrl', function($scope) {})
 
-    .controller('ChatsDetailCtrl', function($scope) {})
+    .controller('diningCtrl', function($scope) {})
 
-    .controller('AccountCtrl', function($scope) {})
+    .controller('specCtrl', function($scope) {})
 
-    .controller('DiningCtrl', function($scope) {})

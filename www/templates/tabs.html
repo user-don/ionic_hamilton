@@ -5,20 +5,25 @@ navigation history that also transitions its views in and out.
 -->
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
-  <!-- Dashboard Tab -->
-  <ion-tab title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
-    <ion-nav-view name="tab-dash"></ion-nav-view>
+  <!-- numbersboard Tab -->
+  <ion-tab title="Numbers" icon="ion-iphone" href="#/tab/numbers">
+    <ion-nav-view name="tab-numbers"></ion-nav-view>
   </ion-tab>
 
   <!-- Chats Tab -->
-  <ion-tab title="Dining" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/dining">
+  <ion-tab title="Dining" icon="ion-fork" href="#/tab/dining">
     <ion-nav-view name="tab-dining"></ion-nav-view>
   </ion-tab>
 
-  <!-- Account Tab -->
-  <ion-tab title="Account" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
-    <ion-nav-view name="tab-account"></ion-nav-view>
+  <!-- map Tab -->
+  <ion-tab title="map" icon="ion-map" href="#/tab/map">
+    <ion-nav-view name="tab-map"></ion-nav-view>
   </ion-tab>
+
+  <!-- spec Tab -->
+  <ion-tab title="The Spec" icon="ion-social-rss" href="#/tab/spec">
+    <ion-nav-view name="tab-spec"></ion-nav-view>
+  </ion-tab>  
 
 
 </ion-tabs>
