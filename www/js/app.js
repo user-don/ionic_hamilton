@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'iHamilton.services' is found in services.js
 // 'iHamilton.controllers' is found in controllers.js
-angular.module('iHamilton', ['ionic', 'iHamilton.controllers', 'iHamilton.services'])
+var iHamilton = angular.module('iHamilton', ['ionic', 'iHamilton.controllers', 'iHamilton.services'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -73,7 +73,7 @@ angular.module('iHamilton', ['ionic', 'iHamilton.controllers', 'iHamilton.servic
         views: {
             'tab-spec': {
                 templateUrl: 'templates/tab-spec.html',
-                controller: 'mapCtrl'
+                controller: 'specCtrl'
             }
         }
     });
@@ -82,3 +82,4 @@ angular.module('iHamilton', ['ionic', 'iHamilton.controllers', 'iHamilton.servic
     $urlRouterProvider.otherwise('/tab/numbers');
 
 });
+
