@@ -1,0 +1,1 @@
+http://boilerpipe-web.appspot.com/extract?url=http://students.hamilton.edu/spectator/news-2015/p/minor-theater-renamed-for-morris-76/view&output=htmlFragment

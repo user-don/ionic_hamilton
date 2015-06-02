@@ -9,7 +9,7 @@ iHamilton.controller('diningCtrl', function ($scope) {})
 iHamilton.controller('specCtrl', function ($http, $scope) {
 
     $scope.init = function () {
-        $http.get("http://ajax.googleapis.com/ajax/services/feed/load", {
+        var theFeed = $http.get("http://ajax.googleapis.com/ajax/services/feed/load", {
                 params: {
                     "v": "1.0",
                     // "q": "http://blog.nraboy.com/feed/"
@@ -32,6 +32,9 @@ iHamilton.controller('specCtrl', function ($http, $scope) {
             });
     }
     $scope.browse = function (v) {
-        window.open(v, "_blank", "location=yes");
+        // until I can figure out how to actually pull text from a URL using an internal library,
+        // I'm using the amazing tool provided at http://boilerpipe-web.appspot.com/
+        window.open("http://boilerpipe-web.appspot.com/extract?url=" + v + "&output=htmlFragment", "_blank", "location=yes,toolbar=yes");
+        console.log(v);
     }
 })
