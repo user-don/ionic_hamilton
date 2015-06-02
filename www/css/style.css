@@ -15,4 +15,7 @@
   display: block !important;
 }
 
-
+#dininglist {
+  line-height: 10px;
+  padding: 0;
+}
