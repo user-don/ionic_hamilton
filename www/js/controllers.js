@@ -12,7 +12,9 @@ iHamilton.controller('specCtrl', function ($http, $scope) {
         $http.get("http://ajax.googleapis.com/ajax/services/feed/load", {
                 params: {
                     "v": "1.0",
-                    "q": "http://blog.nraboy.com/feed/"
+                    // "q": "http://blog.nraboy.com/feed/"
+                    "q": "http://students.hamilton.edu/rss/articles.cfm?item=A9AAF6B5-FB82-2ADF-26A75A82CDDD1221",
+                    "num": "10"
                 }
             })
             .success(function (data) {
