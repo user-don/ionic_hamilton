@@ -5,21 +5,62 @@ iHamilton.controller('numbersCtrl', function ($scope) {})
 iHamilton.controller('mapCtrl', function ($scope) {})
 
 iHamilton.controller('diningCtrl', function ($scope) {
-  var diningHours = [
-    "M-F 10-6pm linebreak",
-    "M-F 10-6pm linebreak",
-    "M-F 10-6pm",
-    "M-F 10-6pm",
-    "M-F 10-6pm",
-    "M-F 10-6pm"
+  $scope.todayHours = [
+    "Today: ",
+    "Today: ",
+    "Today: ",
+    "Today: ",
+    "Today: ",
+    "Today: "
   ];
-  var dh2 = [
-    ["hi","there"],
-    ["hi","there"],
-    ["hi","there"],
-    ["hi","there"],
-    ["hi","there"],
-    ["hi","there"]
+  var diningArray = [
+    // commons
+    ["Daily: 7:30am-4pm, 5-8pm", "* Breakfast grill closes at 10am M-F",
+     "* Brunch served 11am-2pm Sat-Sun"], // array of 4
+    // mcewen
+    [
+     "M: 7:30am-2:30pm, 4:30-8pm",
+     "T: 7:30am-2:30pm, 4:30-8pm",
+     "W: 7:30am-2:30pm, 4:30-8pm",
+     "T: 7:30am-2:30pm, 4:30-8pm",
+     "F: 7:30am-2:30pm (CLOSED for dinner)",
+     "S: CLOSED",
+     "S: CLOSED"],
+    // diner
+    [
+     "M: 9am-Midnight",
+     "T: 9am-11am",
+     "W: 9am-11am",
+     "T: 9am-Midnight, 12:30-4am (Diner B)",
+     "F: 9am-Midnight, 12:30-4am (Diner B)",
+     "S: 3pm-Midnight, 12:30-4am (Diner B)",
+     "S: 3pm-Midnight, 12:30-4am (Diner B)"],
+    // pub
+    ["M: 11:30am-1pm (lunch)",
+     "T: 11:30am-1pm (lunch), 8pm-2am (nite)",
+     "W: 11:30am-1pm (lunch), 8pm-2am (nite)",
+     "T: 11:30am-1pm (lunch), 8pm-2am (nite)",
+     "F: 11:30am-1pm (lunch), 4pm-2am (nite)",
+     "S: 8pm-2am (nite)",
+     "S: CLOSED"],
+
+    // opus 1
+    ["M: 8:30am-4:30pm, 7:30pm-11:30pm",
+     "T: 8:30am-4:30pm, 7:30pm-11:30pm",
+     "W: 8:30am-4:30pm, 7:30pm-11:30pm",
+     "T: 8:30am-4:30pm",
+     "M: 8:30am-3:30pm",
+     "S: CLOSED",
+     "S: 7:30pm-11:30pm"],
+
+    // opus 2
+    ["M: 8:30am-4:30pm, 7:30pm-11:30pm",
+     "T: 8:30am-4:30pm, 7:30pm-11:30pm",
+     "W: 8:30am-4:30pm, 7:30pm-11:30pm",
+     "T: 8:30am-4:30pm",
+     "M: 8:30am-3:30pm",
+     "S: CLOSED",
+     "S: 7:30pm-11:30pm"]
   ];
   var diningLocations = [
     "Commons",
@@ -38,8 +79,9 @@ iHamilton.controller('diningCtrl', function ($scope) {
       show: false
     };
     // here is where we add data (eventually from JSON database I think)
-    $scope.groups[i].items.push(diningHours[i]);
-    // $scope.groups[i].items.push(i + '-' + 0);
+    // $scope.groups[i].items.push(diningHours[i]);
+    $scope.groups[i].items.push(diningArray[i]);
+
   }
   // if given group is selected group, deselect it
   // else, select the given group
