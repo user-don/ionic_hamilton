@@ -79,7 +79,6 @@ iHamilton.controller('diningCtrl', function ($scope) {
       show: false
     };
     // here is where we add data (eventually from JSON database I think)
-    // $scope.groups[i].items.push(diningHours[i]);
     $scope.groups[i].items.push(diningArray[i]);
 
   }
