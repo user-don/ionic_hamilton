@@ -16,7 +16,10 @@ var iHamilton = angular.module('iHamilton', ['ionic', 'iHamilton.controllers', '
         }
         if (window.StatusBar) {
             // org.apache.cordova.statusbar required
-            StatusBar.styleLightContent();
+            // make statusbar not overlay webview upon startup
+            StatusBar.overlaysWebView( false );
+            // set default style for bar (black text on off-white background)
+            StatusBar.styleDefault();
         }
     });
 })
