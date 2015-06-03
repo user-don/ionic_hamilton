@@ -5,14 +5,6 @@ iHamilton.controller('numbersCtrl', function ($scope) {})
 iHamilton.controller('mapCtrl', function ($scope) {})
 
 iHamilton.controller('diningCtrl', function ($scope) {
-//  $scope.todayHours = [
-//    "Today: ",
-//    "Today: ",
-//    "Today: ",
-//    "Today: ",
-//    "Today: ",
-//    "Today: "
-//  ];
   var diningArray = [
     // commons
     ["Daily: 7:30am-4pm, 5-8pm", "* Breakfast grill closes at 10am M-F",
@@ -71,32 +63,28 @@ iHamilton.controller('diningCtrl', function ($scope) {
     "Opus II"
   ];
 
-  var todayHoursMatrix = [
-    // sunday
-    ["7:30am-4pm, 5-8pm. Brunch from 11am-2pm", // commons
-     "CLOSED"]]; // mcewen
-
   var today = new Date().getDay();
   // now set "today" so that monday is at index 0
   today = (today - 1 % 6 == -1 ? 6 : today - 1);
 
-  var todayHoursTwo = [];
+  var todayHoursVar = [];
   // commons hours for today
-  todayHoursTwo.push(today < 5 ? // M-F, else weekend
-     "7:30am-4pm, 5-8pm" :
-     "7:30am-4pm, 5-8pm. Brunch from 11am-2pm");
+  todayHoursVar.push(today < 5 ? // M-F, else weekend
+     "   7:30am-4pm, 5-8pm" :
+     "   7:30am-4pm, 5-8pm. Brunch from 11am-2pm");
   // all others conform with index, so we can pull from diningArray
   for (var i=1; i < 6; i++) { // i iterates through diningArray index
-    todayHoursTwo.push(diningArray[i][today]);
+    todayHoursVar.push(diningArray[i][today]);
   }
 
-  $scope.todayHours = todayHoursTwo;
+  $scope.todayHours = todayHoursVar;
 
 
   $scope.groups = [];
   for (var i = 0; i < 6; i++) {
     $scope.groups[i] = {
       // name: i,
+      theIndex: i, // the $index was acting srangely in tab-dining.html
       name: diningLocations[i],
       items: [],
       show: false

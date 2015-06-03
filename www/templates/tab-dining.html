@@ -8,15 +8,20 @@
         </ion-item>
         <ion-item class="item-accordion" ng-repeat="item in group.items"
                   ng-show="isGroupShown(group) && item.length">
+
           <!-- special case: the "today" hours -->
           <a>
-            <font size="3" color="black"><b>{{ todayHours[$index] }}</b><br></font>
+            <font size="3" color="black"><b>
+              Today's Hours: {{ todayHours[group.theIndex].substring(3) }}
+              </b><br></font>
           </a>
+
           <!-- each item is array of hours information. show each one followed by break -->
           <a ng-repeat="myitem in item track by $index">
             <font size="3" color="black">{{myitem}}<br></font>
           </a>
           <!-- note: use ng-if="$index > 0" to exclude first item -->
+
         </ion-item>
       </div>
     </ion-list>
