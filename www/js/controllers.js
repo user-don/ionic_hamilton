@@ -90,7 +90,6 @@ iHamilton.controller('diningCtrl', function ($scope) {
 
   $scope.todayHours = todayHoursVar;
 
-
   $scope.groups = [];
   for (var i = 0; i < 6; i++) {
     $scope.groups[i] = {
@@ -118,21 +117,11 @@ iHamilton.controller('diningCtrl', function ($scope) {
 iHamilton.controller('specCtrl', function ($http, $rootScope, $scope, $location) {
   // executed upon loading of controller, which occurs on tab load
   // (as specified in $stateProvider)
-  $scope.sleep = function (milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-      if ((new Date().getTime() - start) > milliseconds){
-        break;
-      }
-    }
-  }
-
 
   $scope.init = function () {
     var theFeed = $http.get("http://ajax.googleapis.com/ajax/services/feed/load", {
         params: {
           "v": "1.0",
-          // "q": "http://blog.nraboy.com/feed/"
           "q": "http://students.hamilton.edu/rss/articles.cfm?item=A9AAF6B5-FB82-2ADF-26A75A82CDDD1221",
           "num": "10"
         }
@@ -171,47 +160,20 @@ iHamilton.controller('specCtrl', function ($http, $rootScope, $scope, $location)
           $rootScope.entries = JSON.parse(window.localStorage["entries"]);
         }
       });
-
-
-
-    // testing readability
   } // should this have a semicolon?
 
 
-  $scope.browse = function (v) {
-    // until I can figure out how to actually pull text from a URL using an internal library,
-    // I'm using the amazing tool provided at http://boilerpipe-web.appspot.com/
-    window.open("http://boilerpipe-web.appspot.com/extract?url=" + v + "&output=htmlFragment", "_blank", "location=yes,toolbar=yes");
-    console.log(v);
-  }
-  // $scope.mylocation = $location.path();
-  // console.log($scope.mylocation.slice(-1));
-  $scope.mylocation = $location.hash();
-  console.log($scope.mylocation);
-  $rootScope.test = "abcd";
-  // now try and fill all articles with the full text of first one...
-  $scope.callReadability = function () {
-//    var theContent = $http.get("https://readability.com/api/content/v1/parser", {
-//      params: {
-//        "url": "http://blog.readability.com/2011/02/step-up-be-heard-readability-ideas/",
-//        "token": "e8cfe26b875639dd05fdc90bb4864b8329e52061"
-//      }
-//    })
-//    .success(function (data) {
-//      console.log(data);
-//      $scope.articleEntry = data.author;
-//    })
-//    .error(function (data) {
-//      console.log("ERROR" + data);
-//    });
+//  $scope.browse = function (v) {
+//    // until I can figure out how to actually pull text from a URL using an internal library,
+//    // I'm using the amazing tool provided at http://boilerpipe-web.appspot.com/
+//    window.open("http://boilerpipe-web.appspot.com/extract?url=" + v + "&output=htmlFragment", "_blank", "location=yes,toolbar=yes");
+//    console.log(v);
+//  }
 
-  };
 
 })
 
 iHamilton.controller('specEntryCtrl', function ($http, $rootScope, $scope, $location) {
-  //$scope.index = $stateParams.index;
-  //$scope.entry
   $scope.init = function() {
     $scope.mylocation = $location.hash();
     var theContent = $http.get("https://readability.com/api/content/v1/parser", {
@@ -221,7 +183,7 @@ iHamilton.controller('specEntryCtrl', function ($http, $rootScope, $scope, $loca
       }
     })
     .success(function (data) {
-      console.log(data);
+      //console.log(data);
       $scope.articleEntryRaw = data.content;
       // now clean to remove URLs, because inAppBrowser isn't working (heh)
       $scope.cleanFirstPass = $scope.articleEntryRaw.replace(/<a\/?[^>]+()+(>)/g, "");
