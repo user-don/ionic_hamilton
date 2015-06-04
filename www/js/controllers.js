@@ -127,32 +127,14 @@ iHamilton.controller('specCtrl', function ($http, $rootScope, $scope, $location)
         }
       })
       .success(function (data) {
-        console.log(data);
-        //console.log(data.responseData.feed.entries[1].content);
         $scope.rssTitle = data.responseData.feed.title;
         $scope.rssUrl = data.responseData.feed.feedUrl;
         $scope.rssSiteUrl = data.responseData.feed.link;
         $rootScope.entries = data.responseData.feed.entries;
         $scope.exampleUrl = data.responseData.feed.entries[0].link;
 
-        console.log($rootScope.entries);
+        //console.log($rootScope.entries);
         window.localStorage["entries"] = JSON.stringify(data.responseData.feed.entries);
-
-        var theContent = $http.get("https://readability.com/api/content/v1/parser", {
-          params: {
-            //url: "http://blog.readability.com/2011/02/step-up-be-heard-readability-ideas/",
-            url: $scope.exampleUrl,
-            token: "e8cfe26b875639dd05fdc90bb4864b8329e52061"
-          }
-        })
-        .success(function (data) {
-          console.log(data);
-          $scope.articleEntry = data.content;
-        })
-        .error(function (data) {
-          console.log("ERROR" + data);
-        });
-
       })
       .error(function (data) {
         console.log("ERROR: " + data);
@@ -194,7 +176,7 @@ iHamilton.controller('specEntryCtrl', function ($http, $rootScope, $scope, $loca
     });
   } // no semicolon after this i guess
 
-  console.log($scope.mylocation);
+  //console.log($scope.mylocation);
 
 })
 
