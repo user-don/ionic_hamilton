@@ -84,7 +84,7 @@ var iHamilton = angular.module('iHamilton', ['ionic', 'iHamilton.controllers', '
     .state('tab.specEntry', {
       url: '/specentry',
       views: {
-        'tab-spec': {
+        'tab-spec': { // the view is tab-spec because called from spec page
           controller: 'specEntryCtrl',
           templateUrl: 'templates/tab-specentry.html'
         }
