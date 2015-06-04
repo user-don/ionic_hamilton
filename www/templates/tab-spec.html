@@ -9,7 +9,7 @@ entire thing.
         <!-- NOTE: ng-init might be breaking it -->
         <div class="list">
             <a ng-repeat="entry in entries" class="item" href="#/tab/specentry/#{{$index}}"
-               ng-click="callReadability()">
+             >
                 <b class="story-title">{{entry.title}}</b>
                 <br>
                 <span ng-bind-html="entry.contentSnippet"></span>

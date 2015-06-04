@@ -143,10 +143,10 @@ iHamilton.controller('specCtrl', function ($http, $rootScope, $scope, $location)
         $scope.rssTitle = data.responseData.feed.title;
         $scope.rssUrl = data.responseData.feed.feedUrl;
         $scope.rssSiteUrl = data.responseData.feed.link;
-        $scope.entries = data.responseData.feed.entries;
+        $rootScope.entries = data.responseData.feed.entries;
         $scope.exampleUrl = data.responseData.feed.entries[0].link;
-        console.log($scope.exampleUrl);
-        console.log($scope.entries);
+
+        console.log($rootScope.entries);
         window.localStorage["entries"] = JSON.stringify(data.responseData.feed.entries);
 
         var theContent = $http.get("https://readability.com/api/content/v1/parser", {
@@ -168,7 +168,7 @@ iHamilton.controller('specCtrl', function ($http, $rootScope, $scope, $location)
       .error(function (data) {
         console.log("ERROR: " + data);
         if (window.localStorage["entries"] !== undefined) {
-          $scope.entries = JSON.parse(window.localStorage["entries"]);
+          $rootScope.entries = JSON.parse(window.localStorage["entries"]);
         }
       });
 
@@ -209,9 +209,39 @@ iHamilton.controller('specCtrl', function ($http, $rootScope, $scope, $location)
 
 })
 
-iHamilton.controller('specEntryCtrl', function ($http, $scope) {
+iHamilton.controller('specEntryCtrl', function ($http, $rootScope, $scope, $location) {
   //$scope.index = $stateParams.index;
   //$scope.entry
+  $scope.init = function() {
+    $scope.mylocation = $location.hash();
+    var theContent = $http.get("https://readability.com/api/content/v1/parser", {
+      params: {
+        "url": $rootScope.entries[$scope.mylocation].link,
+        "token": "e8cfe26b875639dd05fdc90bb4864b8329e52061"
+      }
+    })
+    .success(function (data) {
+      console.log(data);
+      $scope.articleEntryRaw = data.content;
+      // now clean to remove URLs, because inAppBrowser isn't working (heh)
+      $scope.cleanFirstPass = $scope.articleEntryRaw.replace(/<a\/?[^>]+()+(>)/g, "");
+      $scope.articleEntry = $scope.cleanFirstPass.replace(/<\/?[^>]+()+(a>)/g, "");
+    })
+    .error(function (data) {
+      console.log("ERROR" + data);
+    });
+  } // no semicolon after this i guess
 
+  console.log($scope.mylocation);
 
 })
+
+
+/*
+regex
+cleanText = strInputCode.replace(/<\/?[^>]+(>|$)/g, "");
+
+remove <a> tags: /<a\/?[^>]+()+(>)/g
+remove </a> tags: /<\/?[^>]+()+(a>)/g
+
+*/
