@@ -1,11 +1,17 @@
 <ion-view title="Article Detail">
   <ion-content ng-init="init()"> <!-- the init was needed to show entries -->
 
-    <p id="article_title">{{ entries[mylocation].title }}</p>
+<!--    <p id="article_title">{{ entries[mylocation].title }}</p>-->
+    <h3 class="article_title">{{ entries[mylocation].title }}</h3>
 
 <!--    <div ng-bind-html="entry.content"></div>  -->
 
     <br>
+
+    <div class="article_body">
+      {{ entries[mylocation].content }}
+
+    </div>
 
   </ion-content>
 </ion-view>
