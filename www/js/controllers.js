@@ -1,5 +1,16 @@
 angular.module('iHamilton.controllers', [])
 
+/*
+The controller is where we set up the data we want to display in the view
+
+Angular does "dependency injection", so whenever we need a service like the
+$scope service, we declare it as a parameter of the controller function.
+Angular will then "inject" it.
+
+The $scope service allows us to share variables between the controller and
+the view.
+*/
+
 iHamilton.controller('numbersCtrl', function ($scope) {})
 
 iHamilton.controller('mapCtrl', function ($scope) {})
@@ -117,10 +128,16 @@ iHamilton.controller('specCtrl', function ($http, $scope) {
         }
       })
       .success(function (data) {
+        console.log(data);
+        //console.log(data.responseData.feed.entries[1].content);
         $scope.rssTitle = data.responseData.feed.title;
+        console.log($scope.rssTitle);
         $scope.rssUrl = data.responseData.feed.feedUrl;
+        console.log($scope.rssUrl);
         $scope.rssSiteUrl = data.responseData.feed.link;
+        console.log($scope.rssSiteUrl);
         $scope.entries = data.responseData.feed.entries;
+        console.log($scope.entries);
         window.localStorage["entries"] = JSON.stringify(data.responseData.feed.entries);
       })
       .error(function (data) {
@@ -136,4 +153,10 @@ iHamilton.controller('specCtrl', function ($http, $scope) {
     window.open("http://boilerpipe-web.appspot.com/extract?url=" + v + "&output=htmlFragment", "_blank", "location=yes,toolbar=yes");
     console.log(v);
   }
+})
+
+iHamilton.controller('specEntryCtrl', function ($http, $scope) {
+  //$scope.index = $stateParams.index;
+  //$scope.entry
+
 })
