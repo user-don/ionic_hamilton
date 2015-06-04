@@ -8,8 +8,8 @@
 
     <br>
 
-    <div class="article_body">
-      {{ entries[mylocation].content }}
+    <div class="article_body" ng-bind-html="articleEntry">
+<!--      {{ articleEntry }}-->
 
     </div>
 
@@ -21,4 +21,9 @@
 
 {{ specentry.title }}
 
+{{ entries[mylocation].content }}
+
+ng-bind-html-unsafe="articleEntry"
+
+ class="article_body"
 -->

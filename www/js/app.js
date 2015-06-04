@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'iHamilton.services' is found in services.js
 // 'iHamilton.controllers' is found in controllers.js
-var iHamilton = angular.module('iHamilton', ['ionic', 'iHamilton.controllers', 'iHamilton.services'])
+var iHamilton = angular.module('iHamilton', ['ionic', 'iHamilton.controllers', 'iHamilton.services', 'ngSanitize'])
 
 .run(function ($ionicPlatform, $rootScope, $location) {
   $ionicPlatform.ready(function () {

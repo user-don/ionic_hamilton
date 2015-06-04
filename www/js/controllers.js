@@ -118,6 +118,16 @@ iHamilton.controller('diningCtrl', function ($scope) {
 iHamilton.controller('specCtrl', function ($http, $rootScope, $scope, $location) {
   // executed upon loading of controller, which occurs on tab load
   // (as specified in $stateProvider)
+  $scope.sleep = function (milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
+      }
+    }
+  }
+
+
   $scope.init = function () {
     var theFeed = $http.get("http://ajax.googleapis.com/ajax/services/feed/load", {
         params: {
@@ -134,8 +144,26 @@ iHamilton.controller('specCtrl', function ($http, $rootScope, $scope, $location)
         $scope.rssUrl = data.responseData.feed.feedUrl;
         $scope.rssSiteUrl = data.responseData.feed.link;
         $scope.entries = data.responseData.feed.entries;
+        $scope.exampleUrl = data.responseData.feed.entries[0].link;
+        console.log($scope.exampleUrl);
         console.log($scope.entries);
         window.localStorage["entries"] = JSON.stringify(data.responseData.feed.entries);
+
+        var theContent = $http.get("https://readability.com/api/content/v1/parser", {
+          params: {
+            //url: "http://blog.readability.com/2011/02/step-up-be-heard-readability-ideas/",
+            url: $scope.exampleUrl,
+            token: "e8cfe26b875639dd05fdc90bb4864b8329e52061"
+          }
+        })
+        .success(function (data) {
+          console.log(data);
+          $scope.articleEntry = data.content;
+        })
+        .error(function (data) {
+          console.log("ERROR" + data);
+        });
+
       })
       .error(function (data) {
         console.log("ERROR: " + data);
@@ -143,7 +171,13 @@ iHamilton.controller('specCtrl', function ($http, $rootScope, $scope, $location)
           $scope.entries = JSON.parse(window.localStorage["entries"]);
         }
       });
-  }
+
+
+
+    // testing readability
+  } // should this have a semicolon?
+
+
   $scope.browse = function (v) {
     // until I can figure out how to actually pull text from a URL using an internal library,
     // I'm using the amazing tool provided at http://boilerpipe-web.appspot.com/
@@ -153,8 +187,25 @@ iHamilton.controller('specCtrl', function ($http, $rootScope, $scope, $location)
   // $scope.mylocation = $location.path();
   // console.log($scope.mylocation.slice(-1));
   $scope.mylocation = $location.hash();
-  console.log($scope.mylocation2);
+  console.log($scope.mylocation);
   $rootScope.test = "abcd";
+  // now try and fill all articles with the full text of first one...
+  $scope.callReadability = function () {
+//    var theContent = $http.get("https://readability.com/api/content/v1/parser", {
+//      params: {
+//        "url": "http://blog.readability.com/2011/02/step-up-be-heard-readability-ideas/",
+//        "token": "e8cfe26b875639dd05fdc90bb4864b8329e52061"
+//      }
+//    })
+//    .success(function (data) {
+//      console.log(data);
+//      $scope.articleEntry = data.author;
+//    })
+//    .error(function (data) {
+//      console.log("ERROR" + data);
+//    });
+
+  };
 
 })
 
