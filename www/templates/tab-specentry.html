@@ -1,10 +1,10 @@
 <ion-view title="Article Detail">
-  <ion-content>
+  <ion-content ng-init="init()"> <!-- the init was needed to show entries -->
 
     <h2>Article Detail</h2>
 
 <!--    <div ng-bind-html="entry.content"></div>  -->
-    Hellooooo
+    {{ entries[1].title }}
 
   </ion-content>
 </ion-view>
