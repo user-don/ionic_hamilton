@@ -82,7 +82,7 @@ var iHamilton = angular.module('iHamilton', ['ionic', 'iHamilton.controllers', '
     })
 
     .state('tab.specEntry', {
-      url: '/specentry/:index',
+      url: '/specentry',
       controller: 'specEntryCtrl',
       templateUrl: 'templates/tab-specentry.html'
     });
