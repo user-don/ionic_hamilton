@@ -24,3 +24,15 @@ Okay so this is plain CSS, but I renamed the file to SCSS so that it can be pars
   line-height: 10px;
   padding: 0;
 }
+
+#article_title {
+  margin-left:20;
+  margin-top:50 !important;
+  text-align: center;
+}
+
+.articletitle {
+  margin-left:20;
+  margin-top:50 !important;
+  text-align: center;
+}

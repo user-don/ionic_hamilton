@@ -115,7 +115,7 @@ iHamilton.controller('diningCtrl', function ($scope) {
 
 })
 
-iHamilton.controller('specCtrl', function ($http, $scope) {
+iHamilton.controller('specCtrl', function ($http, $scope, $location) {
   // executed upon loading of controller, which occurs on tab load
   // (as specified in $stateProvider)
   $scope.init = function () {
@@ -150,6 +150,12 @@ iHamilton.controller('specCtrl', function ($http, $scope) {
     window.open("http://boilerpipe-web.appspot.com/extract?url=" + v + "&output=htmlFragment", "_blank", "location=yes,toolbar=yes");
     console.log(v);
   }
+  // $scope.mylocation = $location.path();
+  // console.log($scope.mylocation.slice(-1));
+  $scope.mylocation = $location.hash();
+  console.log($scope.mylocation2);
+
+
 })
 
 iHamilton.controller('specEntryCtrl', function ($http, $scope) {
