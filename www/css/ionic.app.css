@@ -71,6 +71,10 @@ b.story-title {
   height:5em;
 }
 
+.today_hours {
+  white-space:normal;
+}
+
 
 /*!
   Ionicons, v2.0.1

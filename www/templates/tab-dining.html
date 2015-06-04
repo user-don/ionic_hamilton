@@ -20,13 +20,17 @@ Note: the double brackets {{ foo }} evaluates foo as an expression, printing out
           <!-- special case: the "today" hours -->
           <a>
             <font size="3" color="black"><b>
-              Today: {{ todayHours[group.theIndex].substring(3) }}
+              <span class="today_hours">
+                Today: {{ todayHours[group.theIndex].substring(3) }}
+              </span>
               </b><br></font>
           </a>
 
           <!-- each item is array of hours information. show each one followed by break -->
           <a ng-repeat="myitem in item track by $index">
-            <font size="2" color="black">{{myitem}}<br></font>
+            <font size="2" color="black"><span class="today_hours">
+              {{myitem}}
+            </span><br></font>
           </a>
           <!-- note: use ng-if="$index > 0" to exclude first item -->
 
