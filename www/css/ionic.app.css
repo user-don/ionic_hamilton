@@ -24,7 +24,9 @@ Okay so this is plain CSS, but I renamed the file to SCSS so that it can be pars
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 20px;
-  transition: 0.09s all linear; }
+  transition: 0.2s all linear; }
+
+/* transition: 0.09s all linear */
 
 .list .item.item-accordion.ng-hide {
   line-height: 0px; }
