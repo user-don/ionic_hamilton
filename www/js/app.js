@@ -83,8 +83,12 @@ var iHamilton = angular.module('iHamilton', ['ionic', 'iHamilton.controllers', '
 
     .state('tab.specEntry', {
       url: '/specentry',
-      controller: 'specEntryCtrl',
-      templateUrl: 'templates/tab-specentry.html'
+      views: {
+        'tab-spec': {
+          controller: 'specEntryCtrl',
+          templateUrl: 'templates/tab-specentry.html'
+        }
+      }
     });
 
     // if none of the above states are matched, use this as the fallback

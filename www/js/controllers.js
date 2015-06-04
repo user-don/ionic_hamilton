@@ -131,11 +131,8 @@ iHamilton.controller('specCtrl', function ($http, $scope) {
         console.log(data);
         //console.log(data.responseData.feed.entries[1].content);
         $scope.rssTitle = data.responseData.feed.title;
-        console.log($scope.rssTitle);
         $scope.rssUrl = data.responseData.feed.feedUrl;
-        console.log($scope.rssUrl);
         $scope.rssSiteUrl = data.responseData.feed.link;
-        console.log($scope.rssSiteUrl);
         $scope.entries = data.responseData.feed.entries;
         console.log($scope.entries);
         window.localStorage["entries"] = JSON.stringify(data.responseData.feed.entries);
@@ -158,5 +155,6 @@ iHamilton.controller('specCtrl', function ($http, $scope) {
 iHamilton.controller('specEntryCtrl', function ($http, $scope) {
   //$scope.index = $stateParams.index;
   //$scope.entry
+
 
 })

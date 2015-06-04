@@ -8,7 +8,7 @@ entire thing.
     <ion-content ng-init="init()">
         <!-- NOTE: ng-init might be breaking it -->
         <div class="list">
-            <a ng-repeat="entry in entries" class="item" href="#/tab/specentry/{{$index}}">
+            <a ng-repeat="entry in entries" class="item" href="#/tab/specentry">
                 <b>{{entry.title}}</b>
                 <br>
                 <span ng-bind-html="entry.contentSnippet"></span>
@@ -20,5 +20,7 @@ entire thing.
 <!--
 
 Removed:   ng-click="browse(entry.link)" from <a> tag
+
+Removed: href="#/tab/specentry/{{$index}}" (removed the  {{$index}} )
 
 -->
