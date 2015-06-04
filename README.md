@@ -17,9 +17,9 @@ iHamilton app ported from JQuery Mobile over to Ionic Framework
   * [x] Validate separate controller for spec entries outside of tab structure, to replace in-app browser
   * [x] Validate Readability API and get key
   * [x] Call [Readability API](https://www.readability.com/developers/api) upon loading article to get text]
-* [ ] Make certificates and add to PhoneGap (ugh)
-* [ ] Fix status bar color, which doesn't appear to be working in ionic view app (but works in iOS emulator)
+* [x] Generate certificates and build in Xcode
+* [x] Fix status bar color, which doesn't appear to be working in ionic view app (but works in iOS emulator)
 * [ ] Even begin to do anything android-related
 * [ ] Add loading screen and icons (pending okay from administration)
 * [ ] Compress css sheet
-* [ ] Optimize javascript
+* [x] Optimize javascript
