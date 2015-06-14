@@ -1,38 +1,8 @@
 /*
-Okay so this is plain CSS, but I renamed the file to SCSS so that it can be parsed appropriately.
+
+If custom CSS becomes too large, insert here and call in ionic.app.scss with
+@import "path_to_style/style.scss"
+
+** needs to be a SCSS file in order to be imported
+
 */
-
-.list .item.item-accordion {
-  /* line-height: 38px; */
-  line-height: 20px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 20px;
-  transition: 0.09s all linear;
-}
-
-.list .item.item-accordion.ng-hide {
-  line-height: 0px;
-}
-
-.list .item.item-accordion.ng-hide-add,
-.list .item.item-accordion.ng-hide-remove {
-  display: block !important;
-}
-
-#dininglist {
-  line-height: 10px;
-  padding: 0;
-}
-
-#article_title {
-  margin-left:20;
-  margin-top:50 !important;
-  text-align: center;
-}
-
-.articletitle {
-  margin-left:20;
-  margin-top:50 !important;
-  text-align: center;
-}
