@@ -19,8 +19,7 @@ $positive:                        #002f86 !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
-// import my custom css
-//@import "www/css/style.scss";
+// Custom CSS
 .list .item.item-accordion {
   /* line-height: 38px; */
   line-height: 20px;
