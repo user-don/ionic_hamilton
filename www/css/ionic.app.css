@@ -15,9 +15,6 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
-/*
-Okay so this is plain CSS, but I renamed the file to SCSS so that it can be parsed appropriately.
-*/
 .list .item.item-accordion {
   /* line-height: 38px; */
   line-height: 20px;
@@ -27,7 +24,6 @@ Okay so this is plain CSS, but I renamed the file to SCSS so that it can be pars
   transition: 0.2s all linear; }
 
 /* transition: 0.09s all linear */
-
 .list .item.item-accordion.ng-hide {
   line-height: 0px; }
 
@@ -51,8 +47,7 @@ Okay so this is plain CSS, but I renamed the file to SCSS so that it can be pars
   font-weight: 500;
   font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
   line-height: 1.2;
-  font-size:24px;
-}
+  font-size: 24px; }
 
 .article_title {
   margin-left: 20px;
@@ -65,18 +60,14 @@ Okay so this is plain CSS, but I renamed the file to SCSS so that it can be pars
   margin-right: 20px;
   margin-top: 0px;
   text-align: left;
-  font-size: 16px;
-}
+  font-size: 16px; }
 
 b.story-title {
-  white-space:normal;
-  height:5em;
-}
+  white-space: normal;
+  height: 5em; }
 
 .today_hours {
-  white-space:normal;
-}
-
+  white-space: normal; }
 
 /*!
   Ionicons, v2.0.1
@@ -2321,16 +2312,6 @@ b.story-title {
  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
  * http://cssreset.com
  */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, i, u, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, fieldset, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
-  font: inherit;
-  font-size: 100%; }
-
-
-/*
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, i, u, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, fieldset, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -2338,7 +2319,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   vertical-align: baseline;
   font: inherit;
   font-size: 100%; }
-*/
 
 ol, ul {
   list-style: none; }
@@ -2853,10 +2833,8 @@ ion-infinite-scroll {
  * Typography
  * --------------------------------------------------
  */
-/*
 p {
   margin: 0 0 10px; }
-*/
 
 small {
   font-size: 85%; }
