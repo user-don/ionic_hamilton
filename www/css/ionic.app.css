@@ -16,14 +16,12 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
 .list .item.item-accordion {
-  /* line-height: 38px; */
   line-height: 20px;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 20px;
   transition: 0.2s all linear; }
 
-/* transition: 0.09s all linear */
 .list .item.item-accordion.ng-hide {
   line-height: 0px; }
 
@@ -33,21 +31,6 @@ $dark:                            #444 !default;
 #dininglist {
   line-height: 10px;
   padding: 0; }
-
-#article_title {
-  margin-left: 20px;
-  margin-right: 50px;
-  margin-top: 50 !important;
-  text-align: center;
-  padding: 0;
-  border: 0;
-  vertical-align: baseline;
-  font: inherit;
-  color: #000;
-  font-weight: 500;
-  font-family: "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
-  line-height: 1.2;
-  font-size: 24px; }
 
 .article_title {
   margin-left: 20px;
