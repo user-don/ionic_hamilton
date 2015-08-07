@@ -1,8 +1,7 @@
 # ionic_hamilton
 iHamilton app ported from JQuery Mobile over to Ionic Framework
 
-### TODO
-
+### TODO (Don)
 * [x] Numbers Tab
   * [x] construct phone numbers using ion-list
 * [x] Dining
@@ -19,7 +18,10 @@ iHamilton app ported from JQuery Mobile over to Ionic Framework
   * [x] Call [Readability API](https://www.readability.com/developers/api) upon loading article to get text]
 * [x] Generate certificates and build in Xcode
 * [x] Fix status bar color, which doesn't appear to be working in ionic view app (but works in iOS emulator)
-* [ ] Even begin to do anything android-related
-* [ ] Add loading screen and icons (pending okay from administration)
+* [x] Add loading screen and icons (pending okay from administration)
 * [ ] Compress css sheet
 * [x] Optimize javascript 
+
+### TODO (Chris)
+* [ ] Roll out android version of app
+
